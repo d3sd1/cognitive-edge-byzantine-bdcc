@@ -1,0 +1,124 @@
+{
+  "experiment_name": "cognitive-edge-byzantine-bdcc",
+  "paper_slug": "2026-cognitive-edge-byzantine-bdcc",
+  "random_seeds": [42, 123, 456, 789, 1024],
+
+  "cognitive": {
+    "dataset_dir": "../../../../datasets/dataset_motostudent_electric",
+    "session_files": [
+      "Albacete_1_T1.3.xlsm",
+      "Albacete_1_T2.xlsm",
+      "Albacete_1.1_T1.xlsm"
+    ],
+    "sheet": "Datos",
+    "channels": [
+      {"col": 0,  "name": "throttle"},
+      {"col": 3,  "name": "id_current"},
+      {"col": 6,  "name": "battery_current"},
+      {"col": 9,  "name": "motor_rpm"},
+      {"col": 12, "name": "torque_pct"},
+      {"col": 15, "name": "torque_cutback"},
+      {"col": 18, "name": "ac_motor_current"},
+      {"col": 21, "name": "heatsink_temp"},
+      {"col": 24, "name": "battery_voltage"},
+      {"col": 27, "name": "iq_current"},
+      {"col": 30, "name": "throttle_voltage"},
+      {"col": 33, "name": "ptc_temp"},
+      {"col": 36, "name": "ac_motor_voltage"}
+    ],
+    "resample_hz": 10.0,
+    "rpm_to_kmh": 0.01138,
+    "feature_channels": ["torque_pct", "ac_motor_current", "battery_voltage",
+                          "iq_current", "heatsink_temp", "ac_motor_voltage"],
+    "feature_channels_note": "FIX (reviewer M5): the four label-defining channels (throttle, battery_current) and the channels from which the labels are derived (motor_rpm -> speed_kmh -> long_accel, plus power_kw which embeds battery_current) are EXCLUDED from the feature set. The classifier sees only powertrain/electrical signals that are independent of the labelling rule, measuring whether dynamic state is recoverable from signals other than those that define the labels. This is the honest (and harder) task; F1 is expected to drop.",
+    "label_defining_channels": ["throttle", "battery_current", "motor_rpm",
+                                 "speed_kmh", "long_accel", "power_kw"],
+    "window": 20,
+    "window_stride": 5,
+    "labeling": {
+      "min_run_speed_kmh": 12.0,
+      "brake_decel_thresh": -0.9,
+      "accel_thresh": 0.9,
+      "cruise_accel_band": 0.6,
+      "cruise_min_speed_kmh": 45.0,
+      "cornering_max_speed_kmh": 75.0,
+      "throttle_on": 0.12,
+      "smooth_window": 7,
+      "min_state_len": 4
+    },
+    "model": {
+      "type": "cnn1d",
+      "conv_channels": [16, 32],
+      "kernel_size": 3,
+      "fc_hidden": 32,
+      "dropout": 0.2
+    },
+    "training": {
+      "epochs": 40,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-4,
+      "optimizer": "adam",
+      "class_weighting": true,
+      "early_stopping_patience": 8
+    },
+    "split": {
+      "method": "group_by_session_segment",
+      "n_segments": 10,
+      "train_frac": 0.7,
+      "val_frac": 0.15,
+      "test_frac": 0.15
+    }
+  },
+
+  "synthetic_stream": {
+    "n_channels": 88,
+    "duration_s": 20.0,
+    "rate_groups": [
+      {"count": 8,  "hz": 1000.0, "kind": "imu"},
+      {"count": 12, "hz": 500.0,  "kind": "suspension"},
+      {"count": 8,  "hz": 200.0,  "kind": "brake_pressure"},
+      {"count": 20, "hz": 100.0,  "kind": "powertrain"},
+      {"count": 24, "hz": 50.0,   "kind": "battery_cell"},
+      {"count": 12, "hz": 20.0,   "kind": "temperature"},
+      {"count": 4,  "hz": 10.0,   "kind": "gnss"}
+    ],
+    "noise_level": 0.02,
+    "dropout_prob": 0.001
+  },
+
+  "benchmark": {
+    "decision_cadence_hz": 100.0,
+    "n_nodes_sweep": [4, 7, 10],
+    "byzantine_f": 1,
+    "warmup_epochs": 50,
+    "protocols": ["pbft", "raft"],
+    "link_latency_ms": 0.25,
+    "link_latency_note": "Per-hop one-way message delay for an in-vehicle local network (CAN-FD / switched 100BASE-T1 automotive Ethernet). 0.25 ms is a conservative mid-range value: CAN-FD frame at 2 Mbit/s ~ 0.05-0.1 ms plus arbitration/queuing; 100BASE-T1 switched hop ~ 0.1-0.3 ms with store-and-forward. Swept-justified, documented, configurable.",
+    "pbft_sequential_hops": 3,
+    "raft_sequential_hops": 2,
+    "pbft_hops_note": "PBFT critical path = PRE-PREPARE then PREPARE then COMMIT = 3 sequential one-way message delays (2 quorum round-trips after the leader broadcast).",
+    "raft_hops_note": "Raft critical path = AppendEntries then ack = 2 sequential one-way message delays (1 round-trip)."
+  },
+
+  "consensus_sim": {
+    "n_nodes_sweep": [4, 7, 10, 13],
+    "fault_fractions": [0.0, 0.10, 0.20, 0.25, 0.33, 0.40, 0.50],
+    "fault_behaviors": ["silent", "stale", "equivocate", "adaptive"],
+    "n_epochs": 2000,
+    "state_dim": 10,
+    "match_tolerance": 0.05
+  },
+
+  "evaluation": {
+    "confidence_level": 0.95,
+    "representative_fractions": [0.10, 0.20, 0.33]
+  },
+
+  "figures": {
+    "font": "serif",
+    "fontsize": 10,
+    "dpi": 300,
+    "format": "pdf"
+  }
+}

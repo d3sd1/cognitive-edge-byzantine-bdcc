@@ -1,0 +1,7012 @@
+{
+  "experiment": "cognitive-edge-byzantine-bdcc",
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "hardware": {
+    "cpu": "AMD Ryzen 9 5900X 12-Core (24 threads)",
+    "ram_gb": 64,
+    "gpu": "none (CPU-only inference)",
+    "os": "Windows-11-10.0.26100-SP0",
+    "python": "3.13.7"
+  },
+  "cognitive": {
+    "n_seeds": 5,
+    "macro_f1": {
+      "mean": 0.9650061953922459,
+      "std": 0.014706958102754365,
+      "min": 0.9421536930098042,
+      "max": 0.9797225331536623,
+      "ci95": {
+        "mean": 0.9650061953922459,
+        "lo": 0.9445896644738752,
+        "hi": 0.9854227263106166,
+        "std": 0.016442879030000048,
+        "n": 5
+      }
+    },
+    "accuracy": {
+      "mean": 0.9670981960553933,
+      "std": 0.011021710402981777,
+      "min": 0.9526184538653366,
+      "max": 0.9804878048780488,
+      "ci95": {
+        "mean": 0.9670981960553933,
+        "lo": 0.9517976091057601,
+        "hi": 0.9823987830050265,
+        "std": 0.012322646844691927,
+        "n": 5
+      }
+    },
+    "macro_precision": {
+      "mean": 0.9633975718617449,
+      "std": 0.014784714635007563,
+      "min": 0.9382048350494953,
+      "max": 0.9768319476980081
+    },
+    "macro_recall": {
+      "mean": 0.9674521281161267,
+      "std": 0.015225606318749363,
+      "min": 0.94628994374436,
+      "max": 0.9832026875699887
+    },
+    "n_params": 3156,
+    "model_kb": 12.33,
+    "feature_names": [
+      "torque_pct",
+      "ac_motor_current",
+      "battery_voltage",
+      "iq_current",
+      "heatsink_temp",
+      "ac_motor_voltage"
+    ],
+    "inference_latency_ms": {
+      "mean": 0.24836,
+      "std": 0.00722180032955772,
+      "min": 0.2379,
+      "max": 0.2601
+    },
+    "train_time_s": {
+      "mean": 1.3579999999999999,
+      "std": 0.2322412538719166,
+      "min": 1.02,
+      "max": 1.6
+    },
+    "splits": {
+      "n_train": 1576,
+      "n_val": 277,
+      "n_test": 401,
+      "n_windows": 2254
+    },
+    "total_seconds": 4760.281,
+    "class_counts": {
+      "braking": 686,
+      "cornering": 834,
+      "accel": 482,
+      "cruise": 252
+    },
+    "macro_f1_bootstrap_ci95": {
+      "mean": 0.9657868047416719,
+      "lo": 0.9569620120262882,
+      "hi": 0.9736248009283696,
+      "n_boot": 2000,
+      "n_samples": 2073
+    },
+    "per_class_bootstrap_ci95": {
+      "braking": {
+        "f1": 0.9718875502008032,
+        "lo": 0.9619427500871384,
+        "hi": 0.9811031050363987,
+        "support": 610
+      },
+      "cornering": {
+        "f1": 0.9588116137744767,
+        "lo": 0.9481468665897732,
+        "hi": 0.9688949317536408,
+        "support": 757
+      },
+      "accel": {
+        "f1": 0.991907514450867,
+        "lo": 0.9850049002940175,
+        "hi": 0.9967845659163987,
+        "support": 432
+      },
+      "cruise": {
+        "f1": 0.9405405405405406,
+        "lo": 0.9193197671621686,
+        "hi": 0.9594108407300289,
+        "support": 274
+      }
+    },
+    "confusion_matrix_sum": [
+      [
+        605.0,
+        5.0,
+        0.0,
+        0.0
+      ],
+      [
+        28.0,
+        710.0,
+        2.0,
+        17.0
+      ],
+      [
+        0.0,
+        0.0,
+        429.0,
+        3.0
+      ],
+      [
+        2.0,
+        9.0,
+        2.0,
+        261.0
+      ]
+    ],
+    "confusion_matrix_norm": [
+      [
+        0.9918032786885246,
+        0.00819672131147541,
+        0.0,
+        0.0
+      ],
+      [
+        0.036988110964332896,
+        0.9379128137384413,
+        0.002642007926023778,
+        0.022457067371202115
+      ],
+      [
+        0.0,
+        0.0,
+        0.9930555555555556,
+        0.006944444444444444
+      ],
+      [
+        0.0072992700729927005,
+        0.032846715328467155,
+        0.0072992700729927005,
+        0.9525547445255474
+      ]
+    ]
+  },
+  "latency": {
+    "n_seeds": 5,
+    "n_channels": 88,
+    "link_latency_ms": 0.25,
+    "aggregate_rate_sps": 19080.0,
+    "by_config": {
+      "pbft_n4": {
+        "protocol": "pbft",
+        "n_nodes": 4,
+        "network_latency_ms": 0.75,
+        "compute_median_ms": {
+          "mean": 0.20108000026084483,
+          "std": 0.0018497572237947326,
+          "min": 0.19899999824701808,
+          "max": 0.20370000129332766
+        },
+        "median_ms": {
+          "mean": 0.9510800002608448,
+          "std": 0.0018497572237947326,
+          "min": 0.9489999982470181,
+          "max": 0.9537000012933277,
+          "ci95": {
+            "mean": 0.9510800002608448,
+            "lo": 0.9485121255659402,
+            "hi": 0.9536478749557494,
+            "std": 0.002068091447138157,
+            "n": 5
+          }
+        },
+        "mean_ms": {
+          "mean": 0.9561616300063178,
+          "std": 0.003276122096079508,
+          "min": 0.9517567499897268,
+          "max": 0.9602420499923028
+        },
+        "p95_ms": {
+          "mean": 1.0008990010755952,
+          "std": 0.01303931609515386,
+          "min": 0.9857000012125354,
+          "max": 1.0198349990168936
+        },
+        "p99_ms": {
+          "mean": 1.0655928004562156,
+          "std": 0.032443442832940705,
+          "min": 1.0114030004406231,
+          "max": 1.0985010015720036
+        },
+        "exceeds_5ms_budget": false,
+        "sustained_throughput_sps": {
+          "mean": 925722.1031641152,
+          "std": 14767.366725287196,
+          "min": 907525.3975452838,
+          "max": 945693.2668161799
+        }
+      },
+      "pbft_n7": {
+        "protocol": "pbft",
+        "n_nodes": 7,
+        "network_latency_ms": 0.75,
+        "compute_median_ms": {
+          "mean": 0.3662200004328042,
+          "std": 0.002034109585568286,
+          "min": 0.3643000000010943,
+          "max": 0.36950000139768235
+        },
+        "median_ms": {
+          "mean": 1.1162200004328042,
+          "std": 0.002034109585568286,
+          "min": 1.1143000000010943,
+          "max": 1.1195000013976824,
+          "ci95": {
+            "mean": 1.1162200004328042,
+            "lo": 1.1133962036316607,
+            "hi": 1.1190437972339478,
+            "std": 0.0022742036535073062,
+            "n": 5
+          }
+        },
+        "mean_ms": {
+          "mean": 1.1171275699776744,
+          "std": 0.007337841714926995,
+          "min": 1.110899099974631,
+          "max": 1.1290099499747157
+        },
+        "p95_ms": {
+          "mean": 1.1935970008125878,
+          "std": 0.035523537470128465,
+          "min": 1.160915000247769,
+          "max": 1.2438000020047184
+        },
+        "p99_ms": {
+          "mean": 1.3051020000420976,
+          "std": 0.07512683197564556,
+          "min": 1.2331230005584075,
+          "max": 1.4468020015847287
+        },
+        "exceeds_5ms_budget": false,
+        "sustained_throughput_sps": {
+          "mean": 519915.4895175903,
+          "std": 10263.804785808581,
+          "min": 503416.86283626204,
+          "max": 528679.6226796133
+        }
+      },
+      "pbft_n10": {
+        "protocol": "pbft",
+        "n_nodes": 10,
+        "network_latency_ms": 0.75,
+        "compute_median_ms": {
+          "mean": 0.5856499999936204,
+          "std": 0.0030932178904197567,
+          "min": 0.5801000006613322,
+          "max": 0.5893499983358197
+        },
+        "median_ms": {
+          "mean": 1.3356499999936204,
+          "std": 0.0030932178904197567,
+          "min": 1.3301000006613322,
+          "max": 1.3393499983358197,
+          "ci95": {
+            "mean": 1.3356499999936204,
+            "lo": 1.3313559251580374,
+            "hi": 1.3399440748292035,
+            "std": 0.0034583227360985356,
+            "n": 5
+          }
+        },
+        "mean_ms": {
+          "mean": 1.3390905500062218,
+          "std": 0.009214155632086819,
+          "min": 1.3215524000115693,
+          "max": 1.348631499986368
+        },
+        "p95_ms": {
+          "mean": 1.450791999915964,
+          "std": 0.040414551002402835,
+          "min": 1.371014999342151,
+          "max": 1.4758150004417985
+        },
+        "p99_ms": {
+          "mean": 1.551938399206847,
+          "std": 0.07029146983829895,
+          "min": 1.4285190005030017,
+          "max": 1.645305999692937
+        },
+        "exceeds_5ms_budget": false,
+        "sustained_throughput_sps": {
+          "mean": 323969.7876588185,
+          "std": 5159.856800331105,
+          "min": 318726.9630888867,
+          "max": 333827.65953941905
+        }
+      },
+      "raft_n4": {
+        "protocol": "raft",
+        "n_nodes": 4,
+        "network_latency_ms": 0.5,
+        "compute_median_ms": {
+          "mean": 0.08765000093262643,
+          "std": 0.0007615772101402897,
+          "min": 0.0867000017024111,
+          "max": 0.08880000132194255
+        },
+        "median_ms": {
+          "mean": 0.5876500009326264,
+          "std": 0.0007615772101402897,
+          "min": 0.5867000017024111,
+          "max": 0.5888000013219425,
+          "ci95": {
+            "mean": 0.5876500009326264,
+            "lo": 0.5865927622739643,
+            "hi": 0.5887072395912886,
+            "std": 0.0008514692059941649,
+            "n": 5
+          }
+        },
+        "mean_ms": {
+          "mean": 0.5879200399846013,
+          "std": 0.0009241803395270972,
+          "min": 0.5865752999779943,
+          "max": 0.5893742499738437
+        },
+        "p95_ms": {
+          "mean": 0.6166460011882009,
+          "std": 0.001827188111871305,
+          "min": 0.6138000006903894,
+          "max": 0.6193000025523361
+        },
+        "p99_ms": {
+          "mean": 0.6397661997325486,
+          "std": 0.016261463760424286,
+          "min": 0.6198019990988541,
+          "max": 0.658602999872528
+        },
+        "exceeds_5ms_budget": false,
+        "sustained_throughput_sps": {
+          "mean": 2170393.1752493596,
+          "std": 22783.488674618384,
+          "min": 2134843.090217144,
+          "max": 2203861.84106203
+        }
+      },
+      "raft_n7": {
+        "protocol": "raft",
+        "n_nodes": 7,
+        "network_latency_ms": 0.5,
+        "compute_median_ms": {
+          "mean": 0.0886199988599401,
+          "std": 0.0002712941386663479,
+          "min": 0.08819999857223593,
+          "max": 0.08900000102585182
+        },
+        "median_ms": {
+          "mean": 0.5886199988599401,
+          "std": 0.0002712941386663479,
+          "min": 0.5881999985722359,
+          "max": 0.5890000010258518,
+          "ci95": {
+            "mean": 0.5886199988599401,
+            "lo": 0.5882433822182556,
+            "hi": 0.5889966155016246,
+            "std": 0.000303316067977604,
+            "n": 5
+          }
+        },
+        "mean_ms": {
+          "mean": 0.5891814000144222,
+          "std": 0.0007488382767746471,
+          "min": 0.5886041000358091,
+          "max": 0.5906602000213752
+        },
+        "p95_ms": {
+          "mean": 0.6184840006317245,
+          "std": 0.0009307880933718093,
+          "min": 0.6177049976831768,
+          "max": 0.6203050027470454
+        },
+        "p99_ms": {
+          "mean": 0.6379270002653357,
+          "std": 0.016299348671544887,
+          "min": 0.626601999909326,
+          "max": 0.6702089972241083
+        },
+        "exceeds_5ms_budget": false,
+        "sustained_throughput_sps": {
+          "mean": 2139608.672194964,
+          "std": 17756.764481630114,
+          "min": 2104561.8689900814,
+          "max": 2153399.221061878
+        }
+      },
+      "raft_n10": {
+        "protocol": "raft",
+        "n_nodes": 10,
+        "network_latency_ms": 0.5,
+        "compute_median_ms": {
+          "mean": 0.09013000017148443,
+          "std": 0.0004190460640031405,
+          "min": 0.0895000011951197,
+          "max": 0.09069999941857532
+        },
+        "median_ms": {
+          "mean": 0.5901300001714844,
+          "std": 0.0004190460640031405,
+          "min": 0.5895000011951197,
+          "max": 0.5906999994185753,
+          "ci95": {
+            "mean": 0.5901300001714844,
+            "lo": 0.5895482709748575,
+            "hi": 0.5907117293681113,
+            "std": 0.00046850774240737484,
+            "n": 5
+          }
+        },
+        "mean_ms": {
+          "mean": 0.5907093600188091,
+          "std": 0.0006636182119023233,
+          "min": 0.5898661500541493,
+          "max": 0.5915656999877683
+        },
+        "p95_ms": {
+          "mean": 0.6193260012223618,
+          "std": 0.0010139105300147274,
+          "min": 0.6176200004920247,
+          "max": 0.6205050008138642
+        },
+        "p99_ms": {
+          "mean": 0.6383077988139121,
+          "std": 0.011857924024719144,
+          "min": 0.6258020011300687,
+          "max": 0.6558239967562258
+        },
+        "exceeds_5ms_budget": false,
+        "sustained_throughput_sps": {
+          "mean": 2103533.9358758787,
+          "std": 15396.204964064733,
+          "min": 2083749.7013126942,
+          "max": 2123157.60589535
+        }
+      }
+    }
+  },
+  "consensus": {
+    "sweep": {
+      "n4_f0.00_silent": {
+        "n_nodes": 4,
+        "fault_fraction": 0.0,
+        "behavior": "silent",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.00_stale": {
+        "n_nodes": 4,
+        "fault_fraction": 0.0,
+        "behavior": "stale",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.00_equivocate": {
+        "n_nodes": 4,
+        "fault_fraction": 0.0,
+        "behavior": "equivocate",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.00_adaptive": {
+        "n_nodes": 4,
+        "fault_fraction": 0.0,
+        "behavior": "adaptive",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.10_silent": {
+        "n_nodes": 4,
+        "fault_fraction": 0.1,
+        "behavior": "silent",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.10_stale": {
+        "n_nodes": 4,
+        "fault_fraction": 0.1,
+        "behavior": "stale",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.10_equivocate": {
+        "n_nodes": 4,
+        "fault_fraction": 0.1,
+        "behavior": "equivocate",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.10_adaptive": {
+        "n_nodes": 4,
+        "fault_fraction": 0.1,
+        "behavior": "adaptive",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.20_silent": {
+        "n_nodes": 4,
+        "fault_fraction": 0.2,
+        "behavior": "silent",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.20_stale": {
+        "n_nodes": 4,
+        "fault_fraction": 0.2,
+        "behavior": "stale",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.20_equivocate": {
+        "n_nodes": 4,
+        "fault_fraction": 0.2,
+        "behavior": "equivocate",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.20_adaptive": {
+        "n_nodes": 4,
+        "fault_fraction": 0.2,
+        "behavior": "adaptive",
+        "f_actual": 0,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        }
+      },
+      "n4_f0.25_silent": {
+        "n_nodes": 4,
+        "fault_fraction": 0.25,
+        "behavior": "silent",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_avg_messages": {
+          "mean": 16.5,
+          "std": 0.0,
+          "min": 16.5,
+          "max": 16.5
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_avg_messages": {
+          "mean": 3.75,
+          "std": 0.0,
+          "min": 3.75,
+          "max": 3.75
+        }
+      },
+      "n4_f0.25_stale": {
+        "n_nodes": 4,
+        "fault_fraction": 0.25,
+        "behavior": "stale",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.25_equivocate": {
+        "n_nodes": 4,
+        "fault_fraction": 0.25,
+        "behavior": "equivocate",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 26.25,
+          "std": 0.0,
+          "min": 26.25,
+          "max": 26.25
+        },
+        "raft_safety": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.25_adaptive": {
+        "n_nodes": 4,
+        "fault_fraction": 0.25,
+        "behavior": "adaptive",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 26.25,
+          "std": 0.0,
+          "min": 26.25,
+          "max": 26.25
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.33_silent": {
+        "n_nodes": 4,
+        "fault_fraction": 0.33,
+        "behavior": "silent",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_avg_messages": {
+          "mean": 16.5,
+          "std": 0.0,
+          "min": 16.5,
+          "max": 16.5
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_avg_messages": {
+          "mean": 3.75,
+          "std": 0.0,
+          "min": 3.75,
+          "max": 3.75
+        }
+      },
+      "n4_f0.33_stale": {
+        "n_nodes": 4,
+        "fault_fraction": 0.33,
+        "behavior": "stale",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.33_equivocate": {
+        "n_nodes": 4,
+        "fault_fraction": 0.33,
+        "behavior": "equivocate",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 26.25,
+          "std": 0.0,
+          "min": 26.25,
+          "max": 26.25
+        },
+        "raft_safety": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.33_adaptive": {
+        "n_nodes": 4,
+        "fault_fraction": 0.33,
+        "behavior": "adaptive",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 26.25,
+          "std": 0.0,
+          "min": 26.25,
+          "max": 26.25
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.40_silent": {
+        "n_nodes": 4,
+        "fault_fraction": 0.4,
+        "behavior": "silent",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_avg_messages": {
+          "mean": 16.5,
+          "std": 0.0,
+          "min": 16.5,
+          "max": 16.5
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_avg_messages": {
+          "mean": 3.75,
+          "std": 0.0,
+          "min": 3.75,
+          "max": 3.75
+        }
+      },
+      "n4_f0.40_stale": {
+        "n_nodes": 4,
+        "fault_fraction": 0.4,
+        "behavior": "stale",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 27.0,
+          "std": 0.0,
+          "min": 27.0,
+          "max": 27.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.40_equivocate": {
+        "n_nodes": 4,
+        "fault_fraction": 0.4,
+        "behavior": "equivocate",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 26.25,
+          "std": 0.0,
+          "min": 26.25,
+          "max": 26.25
+        },
+        "raft_safety": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.40_adaptive": {
+        "n_nodes": 4,
+        "fault_fraction": 0.4,
+        "behavior": "adaptive",
+        "f_actual": 1,
+        "f_tol": 1,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 26.25,
+          "std": 0.0,
+          "min": 26.25,
+          "max": 26.25
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.75,
+          "std": 0.0,
+          "min": 0.75,
+          "max": 0.75
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.25,
+          "std": 0.0,
+          "min": 5.25,
+          "max": 5.25
+        }
+      },
+      "n4_f0.50_silent": {
+        "n_nodes": 4,
+        "fault_fraction": 0.5,
+        "behavior": "silent",
+        "f_actual": 2,
+        "f_tol": 1,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_avg_messages": {
+          "mean": 6.0,
+          "std": 0.0,
+          "min": 6.0,
+          "max": 6.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_avg_messages": {
+          "mean": 2.0,
+          "std": 0.0,
+          "min": 2.0,
+          "max": 2.0
+        }
+      },
+      "n4_f0.50_stale": {
+        "n_nodes": 4,
+        "fault_fraction": 0.5,
+        "behavior": "stale",
+        "f_actual": 2,
+        "f_tol": 1,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_avg_messages": {
+          "mean": 24.0,
+          "std": 0.0,
+          "min": 24.0,
+          "max": 24.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 4.0,
+          "std": 0.0,
+          "min": 4.0,
+          "max": 4.0
+        }
+      },
+      "n4_f0.50_equivocate": {
+        "n_nodes": 4,
+        "fault_fraction": 0.5,
+        "behavior": "equivocate",
+        "f_actual": 2,
+        "f_tol": 1,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_avg_messages": {
+          "mean": 24.0,
+          "std": 0.0,
+          "min": 24.0,
+          "max": 24.0
+        },
+        "raft_safety": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 4.0,
+          "std": 0.0,
+          "min": 4.0,
+          "max": 4.0
+        }
+      },
+      "n4_f0.50_adaptive": {
+        "n_nodes": 4,
+        "fault_fraction": 0.5,
+        "behavior": "adaptive",
+        "f_actual": 2,
+        "f_tol": 1,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_liveness": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_avg_messages": {
+          "mean": 24.0,
+          "std": 0.0,
+          "min": 24.0,
+          "max": 24.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 4.0,
+          "std": 0.0,
+          "min": 4.0,
+          "max": 4.0
+        }
+      },
+      "n7_f0.00_silent": {
+        "n_nodes": 7,
+        "fault_fraction": 0.0,
+        "behavior": "silent",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.00_stale": {
+        "n_nodes": 7,
+        "fault_fraction": 0.0,
+        "behavior": "stale",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.00_equivocate": {
+        "n_nodes": 7,
+        "fault_fraction": 0.0,
+        "behavior": "equivocate",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.00_adaptive": {
+        "n_nodes": 7,
+        "fault_fraction": 0.0,
+        "behavior": "adaptive",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.10_silent": {
+        "n_nodes": 7,
+        "fault_fraction": 0.1,
+        "behavior": "silent",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.10_stale": {
+        "n_nodes": 7,
+        "fault_fraction": 0.1,
+        "behavior": "stale",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.10_equivocate": {
+        "n_nodes": 7,
+        "fault_fraction": 0.1,
+        "behavior": "equivocate",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.10_adaptive": {
+        "n_nodes": 7,
+        "fault_fraction": 0.1,
+        "behavior": "adaptive",
+        "f_actual": 0,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 12.0,
+          "std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        }
+      },
+      "n7_f0.20_silent": {
+        "n_nodes": 7,
+        "fault_fraction": 0.2,
+        "behavior": "silent",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_avg_messages": {
+          "mean": 67.7,
+          "std": 0.0,
+          "min": 67.7,
+          "max": 67.7
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_avg_messages": {
+          "mean": 9.43,
+          "std": 0.0,
+          "min": 9.43,
+          "max": 9.43
+        }
+      },
+      "n7_f0.20_stale": {
+        "n_nodes": 7,
+        "fault_fraction": 0.2,
+        "behavior": "stale",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.14,
+          "std": 0.0,
+          "min": 11.14,
+          "max": 11.14
+        }
+      },
+      "n7_f0.20_equivocate": {
+        "n_nodes": 7,
+        "fault_fraction": 0.2,
+        "behavior": "equivocate",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_avg_messages": {
+          "mean": 84.85,
+          "std": 0.0,
+          "min": 84.85,
+          "max": 84.85
+        },
+        "raft_safety": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.14,
+          "std": 0.0,
+          "min": 11.14,
+          "max": 11.14
+        }
+      },
+      "n7_f0.20_adaptive": {
+        "n_nodes": 7,
+        "fault_fraction": 0.2,
+        "behavior": "adaptive",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_avg_messages": {
+          "mean": 84.85,
+          "std": 0.0,
+          "min": 84.85,
+          "max": 84.85
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.14,
+          "std": 0.0,
+          "min": 11.14,
+          "max": 11.14
+        }
+      },
+      "n7_f0.25_silent": {
+        "n_nodes": 7,
+        "fault_fraction": 0.25,
+        "behavior": "silent",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_avg_messages": {
+          "mean": 67.7,
+          "std": 0.0,
+          "min": 67.7,
+          "max": 67.7
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_avg_messages": {
+          "mean": 9.43,
+          "std": 0.0,
+          "min": 9.43,
+          "max": 9.43
+        }
+      },
+      "n7_f0.25_stale": {
+        "n_nodes": 7,
+        "fault_fraction": 0.25,
+        "behavior": "stale",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.14,
+          "std": 0.0,
+          "min": 11.14,
+          "max": 11.14
+        }
+      },
+      "n7_f0.25_equivocate": {
+        "n_nodes": 7,
+        "fault_fraction": 0.25,
+        "behavior": "equivocate",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_avg_messages": {
+          "mean": 84.85,
+          "std": 0.0,
+          "min": 84.85,
+          "max": 84.85
+        },
+        "raft_safety": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.14,
+          "std": 0.0,
+          "min": 11.14,
+          "max": 11.14
+        }
+      },
+      "n7_f0.25_adaptive": {
+        "n_nodes": 7,
+        "fault_fraction": 0.25,
+        "behavior": "adaptive",
+        "f_actual": 1,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_liveness": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "pbft_avg_messages": {
+          "mean": 84.85,
+          "std": 0.0,
+          "min": 84.85,
+          "max": 84.85
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.14,
+          "std": 0.0,
+          "min": 11.14,
+          "max": 11.14
+        }
+      },
+      "n7_f0.33_silent": {
+        "n_nodes": 7,
+        "fault_fraction": 0.33,
+        "behavior": "silent",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_liveness": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_avg_messages": {
+          "mean": 48.84,
+          "std": 0.0,
+          "min": 48.84,
+          "max": 48.84
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_avg_messages": {
+          "mean": 7.139999999999999,
+          "std": 8.881784197001252e-16,
+          "min": 7.14,
+          "max": 7.14
+        }
+      },
+      "n7_f0.33_stale": {
+        "n_nodes": 7,
+        "fault_fraction": 0.33,
+        "behavior": "stale",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 10.0,
+          "std": 0.0,
+          "min": 10.0,
+          "max": 10.0
+        }
+      },
+      "n7_f0.33_equivocate": {
+        "n_nodes": 7,
+        "fault_fraction": 0.33,
+        "behavior": "equivocate",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 86.57,
+          "std": 0.0,
+          "min": 86.57,
+          "max": 86.57
+        },
+        "raft_safety": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 10.0,
+          "std": 0.0,
+          "min": 10.0,
+          "max": 10.0
+        }
+      },
+      "n7_f0.33_adaptive": {
+        "n_nodes": 7,
+        "fault_fraction": 0.33,
+        "behavior": "adaptive",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 86.57,
+          "std": 0.0,
+          "min": 86.57,
+          "max": 86.57
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 10.0,
+          "std": 0.0,
+          "min": 10.0,
+          "max": 10.0
+        }
+      },
+      "n7_f0.40_silent": {
+        "n_nodes": 7,
+        "fault_fraction": 0.4,
+        "behavior": "silent",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_liveness": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_avg_messages": {
+          "mean": 48.84,
+          "std": 0.0,
+          "min": 48.84,
+          "max": 48.84
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_avg_messages": {
+          "mean": 7.139999999999999,
+          "std": 8.881784197001252e-16,
+          "min": 7.14,
+          "max": 7.14
+        }
+      },
+      "n7_f0.40_stale": {
+        "n_nodes": 7,
+        "fault_fraction": 0.4,
+        "behavior": "stale",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 90.0,
+          "std": 0.0,
+          "min": 90.0,
+          "max": 90.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 10.0,
+          "std": 0.0,
+          "min": 10.0,
+          "max": 10.0
+        }
+      },
+      "n7_f0.40_equivocate": {
+        "n_nodes": 7,
+        "fault_fraction": 0.4,
+        "behavior": "equivocate",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 86.57,
+          "std": 0.0,
+          "min": 86.57,
+          "max": 86.57
+        },
+        "raft_safety": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 10.0,
+          "std": 0.0,
+          "min": 10.0,
+          "max": 10.0
+        }
+      },
+      "n7_f0.40_adaptive": {
+        "n_nodes": 7,
+        "fault_fraction": 0.4,
+        "behavior": "adaptive",
+        "f_actual": 2,
+        "f_tol": 2,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 86.57,
+          "std": 0.0,
+          "min": 86.57,
+          "max": 86.57
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 10.0,
+          "std": 0.0,
+          "min": 10.0,
+          "max": 10.0
+        }
+      },
+      "n7_f0.50_silent": {
+        "n_nodes": 7,
+        "fault_fraction": 0.5,
+        "behavior": "silent",
+        "f_actual": 3,
+        "f_tol": 2,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_avg_messages": {
+          "mean": 19.7,
+          "std": 0.0,
+          "min": 19.7,
+          "max": 19.7
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_avg_messages": {
+          "mean": 5.14,
+          "std": 0.0,
+          "min": 5.14,
+          "max": 5.14
+        }
+      },
+      "n7_f0.50_stale": {
+        "n_nodes": 7,
+        "fault_fraction": 0.5,
+        "behavior": "stale",
+        "f_actual": 3,
+        "f_tol": 2,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.429,
+          "std": 0.0,
+          "min": 0.429,
+          "max": 0.429
+        },
+        "pbft_avg_messages": {
+          "mean": 76.3,
+          "std": 0.0,
+          "min": 76.3,
+          "max": 76.3
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 8.57,
+          "std": 0.0,
+          "min": 8.57,
+          "max": 8.57
+        }
+      },
+      "n7_f0.50_equivocate": {
+        "n_nodes": 7,
+        "fault_fraction": 0.5,
+        "behavior": "equivocate",
+        "f_actual": 3,
+        "f_tol": 2,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.429,
+          "std": 0.0,
+          "min": 0.429,
+          "max": 0.429
+        },
+        "pbft_avg_messages": {
+          "mean": 76.3,
+          "std": 0.0,
+          "min": 76.3,
+          "max": 76.3
+        },
+        "raft_safety": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        },
+        "raft_accuracy": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 8.57,
+          "std": 0.0,
+          "min": 8.57,
+          "max": 8.57
+        }
+      },
+      "n7_f0.50_adaptive": {
+        "n_nodes": 7,
+        "fault_fraction": 0.5,
+        "behavior": "adaptive",
+        "f_actual": 3,
+        "f_tol": 2,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.429,
+          "std": 0.0,
+          "min": 0.429,
+          "max": 0.429
+        },
+        "pbft_liveness": {
+          "mean": 0.429,
+          "std": 0.0,
+          "min": 0.429,
+          "max": 0.429
+        },
+        "pbft_avg_messages": {
+          "mean": 76.3,
+          "std": 0.0,
+          "min": 76.3,
+          "max": 76.3
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 8.57,
+          "std": 0.0,
+          "min": 8.57,
+          "max": 8.57
+        }
+      },
+      "n10_f0.00_silent": {
+        "n_nodes": 10,
+        "fault_fraction": 0.0,
+        "behavior": "silent",
+        "f_actual": 0,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 18.0,
+          "std": 0.0,
+          "min": 18.0,
+          "max": 18.0
+        }
+      },
+      "n10_f0.00_stale": {
+        "n_nodes": 10,
+        "fault_fraction": 0.0,
+        "behavior": "stale",
+        "f_actual": 0,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 18.0,
+          "std": 0.0,
+          "min": 18.0,
+          "max": 18.0
+        }
+      },
+      "n10_f0.00_equivocate": {
+        "n_nodes": 10,
+        "fault_fraction": 0.0,
+        "behavior": "equivocate",
+        "f_actual": 0,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 18.0,
+          "std": 0.0,
+          "min": 18.0,
+          "max": 18.0
+        }
+      },
+      "n10_f0.00_adaptive": {
+        "n_nodes": 10,
+        "fault_fraction": 0.0,
+        "behavior": "adaptive",
+        "f_actual": 0,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 18.0,
+          "std": 0.0,
+          "min": 18.0,
+          "max": 18.0
+        }
+      },
+      "n10_f0.10_silent": {
+        "n_nodes": 10,
+        "fault_fraction": 0.1,
+        "behavior": "silent",
+        "f_actual": 1,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "pbft_liveness": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "pbft_avg_messages": {
+          "mean": 154.8,
+          "std": 0.0,
+          "min": 154.8,
+          "max": 154.8
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "raft_liveness": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "raft_avg_messages": {
+          "mean": 15.3,
+          "std": 0.0,
+          "min": 15.3,
+          "max": 15.3
+        }
+      },
+      "n10_f0.10_stale": {
+        "n_nodes": 10,
+        "fault_fraction": 0.1,
+        "behavior": "stale",
+        "f_actual": 1,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 17.1,
+          "std": 0.0,
+          "min": 17.1,
+          "max": 17.1
+        }
+      },
+      "n10_f0.10_equivocate": {
+        "n_nodes": 10,
+        "fault_fraction": 0.1,
+        "behavior": "equivocate",
+        "f_actual": 1,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "pbft_liveness": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "pbft_avg_messages": {
+          "mean": 180.9,
+          "std": 0.0,
+          "min": 180.9,
+          "max": 180.9
+        },
+        "raft_safety": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "raft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 17.1,
+          "std": 0.0,
+          "min": 17.1,
+          "max": 17.1
+        }
+      },
+      "n10_f0.10_adaptive": {
+        "n_nodes": 10,
+        "fault_fraction": 0.1,
+        "behavior": "adaptive",
+        "f_actual": 1,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "pbft_liveness": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "pbft_avg_messages": {
+          "mean": 180.9,
+          "std": 0.0,
+          "min": 180.9,
+          "max": 180.9
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.9,
+          "std": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 17.1,
+          "std": 0.0,
+          "min": 17.1,
+          "max": 17.1
+        }
+      },
+      "n10_f0.20_silent": {
+        "n_nodes": 10,
+        "fault_fraction": 0.2,
+        "behavior": "silent",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_avg_messages": {
+          "mean": 124.2,
+          "std": 0.0,
+          "min": 124.2,
+          "max": 124.2
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_avg_messages": {
+          "mean": 12.8,
+          "std": 0.0,
+          "min": 12.8,
+          "max": 12.8
+        }
+      },
+      "n10_f0.20_stale": {
+        "n_nodes": 10,
+        "fault_fraction": 0.2,
+        "behavior": "stale",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.0,
+          "std": 0.0,
+          "min": 16.0,
+          "max": 16.0
+        }
+      },
+      "n10_f0.20_equivocate": {
+        "n_nodes": 10,
+        "fault_fraction": 0.2,
+        "behavior": "equivocate",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_avg_messages": {
+          "mean": 174.6,
+          "std": 0.0,
+          "min": 174.6,
+          "max": 174.6
+        },
+        "raft_safety": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.0,
+          "std": 0.0,
+          "min": 16.0,
+          "max": 16.0
+        }
+      },
+      "n10_f0.20_adaptive": {
+        "n_nodes": 10,
+        "fault_fraction": 0.2,
+        "behavior": "adaptive",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_avg_messages": {
+          "mean": 174.6,
+          "std": 0.0,
+          "min": 174.6,
+          "max": 174.6
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.0,
+          "std": 0.0,
+          "min": 16.0,
+          "max": 16.0
+        }
+      },
+      "n10_f0.25_silent": {
+        "n_nodes": 10,
+        "fault_fraction": 0.25,
+        "behavior": "silent",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_avg_messages": {
+          "mean": 124.2,
+          "std": 0.0,
+          "min": 124.2,
+          "max": 124.2
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_avg_messages": {
+          "mean": 12.8,
+          "std": 0.0,
+          "min": 12.8,
+          "max": 12.8
+        }
+      },
+      "n10_f0.25_stale": {
+        "n_nodes": 10,
+        "fault_fraction": 0.25,
+        "behavior": "stale",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.0,
+          "std": 0.0,
+          "min": 16.0,
+          "max": 16.0
+        }
+      },
+      "n10_f0.25_equivocate": {
+        "n_nodes": 10,
+        "fault_fraction": 0.25,
+        "behavior": "equivocate",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_avg_messages": {
+          "mean": 174.6,
+          "std": 0.0,
+          "min": 174.6,
+          "max": 174.6
+        },
+        "raft_safety": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.0,
+          "std": 0.0,
+          "min": 16.0,
+          "max": 16.0
+        }
+      },
+      "n10_f0.25_adaptive": {
+        "n_nodes": 10,
+        "fault_fraction": 0.25,
+        "behavior": "adaptive",
+        "f_actual": 2,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_liveness": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "pbft_avg_messages": {
+          "mean": 174.6,
+          "std": 0.0,
+          "min": 174.6,
+          "max": 174.6
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8,
+          "std": 0.0,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.0,
+          "std": 0.0,
+          "min": 16.0,
+          "max": 16.0
+        }
+      },
+      "n10_f0.33_silent": {
+        "n_nodes": 10,
+        "fault_fraction": 0.33,
+        "behavior": "silent",
+        "f_actual": 3,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "pbft_liveness": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "pbft_avg_messages": {
+          "mean": 97.2,
+          "std": 0.0,
+          "min": 97.2,
+          "max": 97.2
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "raft_liveness": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "raft_avg_messages": {
+          "mean": 10.5,
+          "std": 0.0,
+          "min": 10.5,
+          "max": 10.5
+        }
+      },
+      "n10_f0.33_stale": {
+        "n_nodes": 10,
+        "fault_fraction": 0.33,
+        "behavior": "stale",
+        "f_actual": 3,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 189.0,
+          "std": 0.0,
+          "min": 189.0,
+          "max": 189.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 14.7,
+          "std": 0.0,
+          "min": 14.7,
+          "max": 14.7
+        }
+      },
+      "n10_f0.33_equivocate": {
+        "n_nodes": 10,
+        "fault_fraction": 0.33,
+        "behavior": "equivocate",
+        "f_actual": 3,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 180.9,
+          "std": 0.0,
+          "min": 180.9,
+          "max": 180.9
+        },
+        "raft_safety": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "raft_accuracy": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 14.7,
+          "std": 0.0,
+          "min": 14.7,
+          "max": 14.7
+        }
+      },
+      "n10_f0.33_adaptive": {
+        "n_nodes": 10,
+        "fault_fraction": 0.33,
+        "behavior": "adaptive",
+        "f_actual": 3,
+        "f_tol": 3,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 180.9,
+          "std": 0.0,
+          "min": 180.9,
+          "max": 180.9
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.7,
+          "std": 0.0,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 14.7,
+          "std": 0.0,
+          "min": 14.7,
+          "max": 14.7
+        }
+      },
+      "n10_f0.40_silent": {
+        "n_nodes": 10,
+        "fault_fraction": 0.4,
+        "behavior": "silent",
+        "f_actual": 4,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_avg_messages": {
+          "mean": 41.4,
+          "std": 0.0,
+          "min": 41.4,
+          "max": 41.4
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_avg_messages": {
+          "mean": 8.4,
+          "std": 0.0,
+          "min": 8.4,
+          "max": 8.4
+        }
+      },
+      "n10_f0.40_stale": {
+        "n_nodes": 10,
+        "fault_fraction": 0.4,
+        "behavior": "stale",
+        "f_actual": 4,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.4,
+          "std": 0.0,
+          "min": 0.4,
+          "max": 0.4
+        },
+        "pbft_avg_messages": {
+          "mean": 156.6,
+          "std": 0.0,
+          "min": 156.6,
+          "max": 156.6
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.6,
+          "std": 0.0,
+          "min": 0.6,
+          "max": 0.6
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 13.2,
+          "std": 0.0,
+          "min": 13.2,
+          "max": 13.2
+        }
+      },
+      "n10_f0.40_equivocate": {
+        "n_nodes": 10,
+        "fault_fraction": 0.4,
+        "behavior": "equivocate",
+        "f_actual": 4,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 0.6,
+          "std": 0.0,
+          "min": 0.6,
+          "max": 0.6
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.4,
+          "std": 0.0,
+          "min": 0.4,
+          "max": 0.4
+        },
+        "pbft_avg_messages": {
+          "mean": 156.6,
+          "std": 0.0,
+          "min": 156.6,
+          "max": 156.6
+        },
+        "raft_safety": {
+          "mean": 0.6,
+          "std": 0.0,
+          "min": 0.6,
+          "max": 0.6
+        },
+        "raft_accuracy": {
+          "mean": 0.6,
+          "std": 0.0,
+          "min": 0.6,
+          "max": 0.6
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 13.2,
+          "std": 0.0,
+          "min": 13.2,
+          "max": 13.2
+        }
+      },
+      "n10_f0.40_adaptive": {
+        "n_nodes": 10,
+        "fault_fraction": 0.4,
+        "behavior": "adaptive",
+        "f_actual": 4,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.4,
+          "std": 0.0,
+          "min": 0.4,
+          "max": 0.4
+        },
+        "pbft_liveness": {
+          "mean": 0.4,
+          "std": 0.0,
+          "min": 0.4,
+          "max": 0.4
+        },
+        "pbft_avg_messages": {
+          "mean": 156.6,
+          "std": 0.0,
+          "min": 156.6,
+          "max": 156.6
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.6,
+          "std": 0.0,
+          "min": 0.6,
+          "max": 0.6
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 13.2,
+          "std": 0.0,
+          "min": 13.2,
+          "max": 13.2
+        }
+      },
+      "n10_f0.50_silent": {
+        "n_nodes": 10,
+        "fault_fraction": 0.5,
+        "behavior": "silent",
+        "f_actual": 5,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_avg_messages": {
+          "mean": 31.5,
+          "std": 0.0,
+          "min": 31.5,
+          "max": 31.5
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_avg_messages": {
+          "mean": 6.5,
+          "std": 0.0,
+          "min": 6.5,
+          "max": 6.5
+        }
+      },
+      "n10_f0.50_stale": {
+        "n_nodes": 10,
+        "fault_fraction": 0.5,
+        "behavior": "stale",
+        "f_actual": 5,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_avg_messages": {
+          "mean": 166.5,
+          "std": 0.0,
+          "min": 166.5,
+          "max": 166.5
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.5,
+          "std": 0.0,
+          "min": 11.5,
+          "max": 11.5
+        }
+      },
+      "n10_f0.50_equivocate": {
+        "n_nodes": 10,
+        "fault_fraction": 0.5,
+        "behavior": "equivocate",
+        "f_actual": 5,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_avg_messages": {
+          "mean": 166.5,
+          "std": 0.0,
+          "min": 166.5,
+          "max": 166.5
+        },
+        "raft_safety": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.5,
+          "std": 0.0,
+          "min": 11.5,
+          "max": 11.5
+        }
+      },
+      "n10_f0.50_adaptive": {
+        "n_nodes": 10,
+        "fault_fraction": 0.5,
+        "behavior": "adaptive",
+        "f_actual": 5,
+        "f_tol": 3,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_liveness": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "pbft_avg_messages": {
+          "mean": 166.5,
+          "std": 0.0,
+          "min": 166.5,
+          "max": 166.5
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.5,
+          "std": 0.0,
+          "min": 0.5,
+          "max": 0.5
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.5,
+          "std": 0.0,
+          "min": 11.5,
+          "max": 11.5
+        }
+      },
+      "n13_f0.00_silent": {
+        "n_nodes": 13,
+        "fault_fraction": 0.0,
+        "behavior": "silent",
+        "f_actual": 0,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 24.0,
+          "std": 0.0,
+          "min": 24.0,
+          "max": 24.0
+        }
+      },
+      "n13_f0.00_stale": {
+        "n_nodes": 13,
+        "fault_fraction": 0.0,
+        "behavior": "stale",
+        "f_actual": 0,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 24.0,
+          "std": 0.0,
+          "min": 24.0,
+          "max": 24.0
+        }
+      },
+      "n13_f0.00_equivocate": {
+        "n_nodes": 13,
+        "fault_fraction": 0.0,
+        "behavior": "equivocate",
+        "f_actual": 0,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 24.0,
+          "std": 0.0,
+          "min": 24.0,
+          "max": 24.0
+        }
+      },
+      "n13_f0.00_adaptive": {
+        "n_nodes": 13,
+        "fault_fraction": 0.0,
+        "behavior": "adaptive",
+        "f_actual": 0,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 24.0,
+          "std": 0.0,
+          "min": 24.0,
+          "max": 24.0
+        }
+      },
+      "n13_f0.10_silent": {
+        "n_nodes": 13,
+        "fault_fraction": 0.1,
+        "behavior": "silent",
+        "f_actual": 1,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "pbft_liveness": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "pbft_avg_messages": {
+          "mean": 277.82,
+          "std": 0.0,
+          "min": 277.82,
+          "max": 277.82
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "raft_liveness": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "raft_avg_messages": {
+          "mean": 21.23,
+          "std": 0.0,
+          "min": 21.23,
+          "max": 21.23
+        }
+      },
+      "n13_f0.10_stale": {
+        "n_nodes": 13,
+        "fault_fraction": 0.1,
+        "behavior": "stale",
+        "f_actual": 1,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 23.08,
+          "std": 0.0,
+          "min": 23.08,
+          "max": 23.08
+        }
+      },
+      "n13_f0.10_equivocate": {
+        "n_nodes": 13,
+        "fault_fraction": 0.1,
+        "behavior": "equivocate",
+        "f_actual": 1,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "pbft_liveness": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "pbft_avg_messages": {
+          "mean": 312.91,
+          "std": 0.0,
+          "min": 312.91,
+          "max": 312.91
+        },
+        "raft_safety": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "raft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 23.08,
+          "std": 0.0,
+          "min": 23.08,
+          "max": 23.08
+        }
+      },
+      "n13_f0.10_adaptive": {
+        "n_nodes": 13,
+        "fault_fraction": 0.1,
+        "behavior": "adaptive",
+        "f_actual": 1,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "pbft_liveness": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "pbft_avg_messages": {
+          "mean": 312.91,
+          "std": 0.0,
+          "min": 312.91,
+          "max": 312.91
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.923,
+          "std": 0.0,
+          "min": 0.923,
+          "max": 0.923
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 23.08,
+          "std": 0.0,
+          "min": 23.08,
+          "max": 23.08
+        }
+      },
+      "n13_f0.20_silent": {
+        "n_nodes": 13,
+        "fault_fraction": 0.2,
+        "behavior": "silent",
+        "f_actual": 2,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "pbft_liveness": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "pbft_avg_messages": {
+          "mean": 235.34,
+          "std": 0.0,
+          "min": 235.34,
+          "max": 235.34
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "raft_liveness": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "raft_avg_messages": {
+          "mean": 18.61,
+          "std": 0.0,
+          "min": 18.61,
+          "max": 18.61
+        }
+      },
+      "n13_f0.20_stale": {
+        "n_nodes": 13,
+        "fault_fraction": 0.2,
+        "behavior": "stale",
+        "f_actual": 2,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 22.0,
+          "std": 0.0,
+          "min": 22.0,
+          "max": 22.0
+        }
+      },
+      "n13_f0.20_equivocate": {
+        "n_nodes": 13,
+        "fault_fraction": 0.2,
+        "behavior": "equivocate",
+        "f_actual": 2,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "pbft_liveness": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "pbft_avg_messages": {
+          "mean": 303.67,
+          "std": 0.0,
+          "min": 303.67,
+          "max": 303.67
+        },
+        "raft_safety": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "raft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 22.0,
+          "std": 0.0,
+          "min": 22.0,
+          "max": 22.0
+        }
+      },
+      "n13_f0.20_adaptive": {
+        "n_nodes": 13,
+        "fault_fraction": 0.2,
+        "behavior": "adaptive",
+        "f_actual": 2,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "pbft_liveness": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "pbft_avg_messages": {
+          "mean": 303.67,
+          "std": 0.0,
+          "min": 303.67,
+          "max": 303.67
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.8459999999999999,
+          "std": 1.1102230246251565e-16,
+          "min": 0.846,
+          "max": 0.846
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 22.0,
+          "std": 0.0,
+          "min": 22.0,
+          "max": 22.0
+        }
+      },
+      "n13_f0.25_silent": {
+        "n_nodes": 13,
+        "fault_fraction": 0.25,
+        "behavior": "silent",
+        "f_actual": 3,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "pbft_liveness": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "pbft_avg_messages": {
+          "mean": 196.56,
+          "std": 0.0,
+          "min": 196.56,
+          "max": 196.56
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "raft_liveness": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "raft_avg_messages": {
+          "mean": 16.15,
+          "std": 0.0,
+          "min": 16.15,
+          "max": 16.15
+        }
+      },
+      "n13_f0.25_stale": {
+        "n_nodes": 13,
+        "fault_fraction": 0.25,
+        "behavior": "stale",
+        "f_actual": 3,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 20.77,
+          "std": 0.0,
+          "min": 20.77,
+          "max": 20.77
+        }
+      },
+      "n13_f0.25_equivocate": {
+        "n_nodes": 13,
+        "fault_fraction": 0.25,
+        "behavior": "equivocate",
+        "f_actual": 3,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "pbft_liveness": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "pbft_avg_messages": {
+          "mean": 296.28,
+          "std": 0.0,
+          "min": 296.28,
+          "max": 296.28
+        },
+        "raft_safety": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "raft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 20.77,
+          "std": 0.0,
+          "min": 20.77,
+          "max": 20.77
+        }
+      },
+      "n13_f0.25_adaptive": {
+        "n_nodes": 13,
+        "fault_fraction": 0.25,
+        "behavior": "adaptive",
+        "f_actual": 3,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "pbft_liveness": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "pbft_avg_messages": {
+          "mean": 296.28,
+          "std": 0.0,
+          "min": 296.28,
+          "max": 296.28
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.769,
+          "std": 0.0,
+          "min": 0.769,
+          "max": 0.769
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 20.77,
+          "std": 0.0,
+          "min": 20.77,
+          "max": 20.77
+        }
+      },
+      "n13_f0.33_silent": {
+        "n_nodes": 13,
+        "fault_fraction": 0.33,
+        "behavior": "silent",
+        "f_actual": 4,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "pbft_liveness": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "pbft_avg_messages": {
+          "mean": 161.47,
+          "std": 0.0,
+          "min": 161.47,
+          "max": 161.47
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "raft_liveness": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "raft_avg_messages": {
+          "mean": 13.84,
+          "std": 0.0,
+          "min": 13.84,
+          "max": 13.84
+        }
+      },
+      "n13_f0.33_stale": {
+        "n_nodes": 13,
+        "fault_fraction": 0.33,
+        "behavior": "stale",
+        "f_actual": 4,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 324.0,
+          "std": 0.0,
+          "min": 324.0,
+          "max": 324.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 19.38,
+          "std": 0.0,
+          "min": 19.38,
+          "max": 19.38
+        }
+      },
+      "n13_f0.33_equivocate": {
+        "n_nodes": 13,
+        "fault_fraction": 0.33,
+        "behavior": "equivocate",
+        "f_actual": 4,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 309.22,
+          "std": 0.0,
+          "min": 309.22,
+          "max": 309.22
+        },
+        "raft_safety": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "raft_accuracy": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 19.38,
+          "std": 0.0,
+          "min": 19.38,
+          "max": 19.38
+        }
+      },
+      "n13_f0.33_adaptive": {
+        "n_nodes": 13,
+        "fault_fraction": 0.33,
+        "behavior": "adaptive",
+        "f_actual": 4,
+        "f_tol": 4,
+        "within_bft_bound": true,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_avg_messages": {
+          "mean": 309.22,
+          "std": 0.0,
+          "min": 309.22,
+          "max": 309.22
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.692,
+          "std": 0.0,
+          "min": 0.692,
+          "max": 0.692
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 19.38,
+          "std": 0.0,
+          "min": 19.38,
+          "max": 19.38
+        }
+      },
+      "n13_f0.40_silent": {
+        "n_nodes": 13,
+        "fault_fraction": 0.4,
+        "behavior": "silent",
+        "f_actual": 5,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_avg_messages": {
+          "mean": 71.04,
+          "std": 0.0,
+          "min": 71.04,
+          "max": 71.04
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_avg_messages": {
+          "mean": 11.69,
+          "std": 0.0,
+          "min": 11.69,
+          "max": 11.69
+        }
+      },
+      "n13_f0.40_stale": {
+        "n_nodes": 13,
+        "fault_fraction": 0.4,
+        "behavior": "stale",
+        "f_actual": 5,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.385,
+          "std": 0.0,
+          "min": 0.385,
+          "max": 0.385
+        },
+        "pbft_avg_messages": {
+          "mean": 264.96,
+          "std": 0.0,
+          "min": 264.96,
+          "max": 264.96
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.615,
+          "std": 0.0,
+          "min": 0.615,
+          "max": 0.615
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 17.84,
+          "std": 0.0,
+          "min": 17.84,
+          "max": 17.84
+        }
+      },
+      "n13_f0.40_equivocate": {
+        "n_nodes": 13,
+        "fault_fraction": 0.4,
+        "behavior": "equivocate",
+        "f_actual": 5,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 0.615,
+          "std": 0.0,
+          "min": 0.615,
+          "max": 0.615
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.385,
+          "std": 0.0,
+          "min": 0.385,
+          "max": 0.385
+        },
+        "pbft_avg_messages": {
+          "mean": 264.96,
+          "std": 0.0,
+          "min": 264.96,
+          "max": 264.96
+        },
+        "raft_safety": {
+          "mean": 0.615,
+          "std": 0.0,
+          "min": 0.615,
+          "max": 0.615
+        },
+        "raft_accuracy": {
+          "mean": 0.615,
+          "std": 0.0,
+          "min": 0.615,
+          "max": 0.615
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 17.84,
+          "std": 0.0,
+          "min": 17.84,
+          "max": 17.84
+        }
+      },
+      "n13_f0.40_adaptive": {
+        "n_nodes": 13,
+        "fault_fraction": 0.4,
+        "behavior": "adaptive",
+        "f_actual": 5,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.385,
+          "std": 0.0,
+          "min": 0.385,
+          "max": 0.385
+        },
+        "pbft_liveness": {
+          "mean": 0.385,
+          "std": 0.0,
+          "min": 0.385,
+          "max": 0.385
+        },
+        "pbft_avg_messages": {
+          "mean": 264.96,
+          "std": 0.0,
+          "min": 264.96,
+          "max": 264.96
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.615,
+          "std": 0.0,
+          "min": 0.615,
+          "max": 0.615
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 17.84,
+          "std": 0.0,
+          "min": 17.84,
+          "max": 17.84
+        }
+      },
+      "n13_f0.50_silent": {
+        "n_nodes": 13,
+        "fault_fraction": 0.5,
+        "behavior": "silent",
+        "f_actual": 6,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_avg_messages": {
+          "mean": 57.19,
+          "std": 0.0,
+          "min": 57.19,
+          "max": 57.19
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_liveness": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_avg_messages": {
+          "mean": 9.68,
+          "std": 0.0,
+          "min": 9.68,
+          "max": 9.68
+        }
+      },
+      "n13_f0.50_stale": {
+        "n_nodes": 13,
+        "fault_fraction": 0.5,
+        "behavior": "stale",
+        "f_actual": 6,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.462,
+          "std": 0.0,
+          "min": 0.462,
+          "max": 0.462
+        },
+        "pbft_avg_messages": {
+          "mean": 278.81,
+          "std": 0.0,
+          "min": 278.81,
+          "max": 278.81
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.538,
+          "std": 0.0,
+          "min": 0.538,
+          "max": 0.538
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.15,
+          "std": 0.0,
+          "min": 16.15,
+          "max": 16.15
+        }
+      },
+      "n13_f0.50_equivocate": {
+        "n_nodes": 13,
+        "fault_fraction": 0.5,
+        "behavior": "equivocate",
+        "f_actual": 6,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 0.538,
+          "std": 0.0,
+          "min": 0.538,
+          "max": 0.538
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pbft_liveness": {
+          "mean": 0.462,
+          "std": 0.0,
+          "min": 0.462,
+          "max": 0.462
+        },
+        "pbft_avg_messages": {
+          "mean": 278.81,
+          "std": 0.0,
+          "min": 278.81,
+          "max": 278.81
+        },
+        "raft_safety": {
+          "mean": 0.538,
+          "std": 0.0,
+          "min": 0.538,
+          "max": 0.538
+        },
+        "raft_accuracy": {
+          "mean": 0.538,
+          "std": 0.0,
+          "min": 0.538,
+          "max": 0.538
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.15,
+          "std": 0.0,
+          "min": 16.15,
+          "max": 16.15
+        }
+      },
+      "n13_f0.50_adaptive": {
+        "n_nodes": 13,
+        "fault_fraction": 0.5,
+        "behavior": "adaptive",
+        "f_actual": 6,
+        "f_tol": 4,
+        "within_bft_bound": false,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.462,
+          "std": 0.0,
+          "min": 0.462,
+          "max": 0.462
+        },
+        "pbft_liveness": {
+          "mean": 0.462,
+          "std": 0.0,
+          "min": 0.462,
+          "max": 0.462
+        },
+        "pbft_avg_messages": {
+          "mean": 278.81,
+          "std": 0.0,
+          "min": 278.81,
+          "max": 278.81
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 0.538,
+          "std": 0.0,
+          "min": 0.538,
+          "max": 0.538
+        },
+        "raft_liveness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_avg_messages": {
+          "mean": 16.15,
+          "std": 0.0,
+          "min": 16.15,
+          "max": 16.15
+        }
+      }
+    },
+    "representative_n7_equivocate": {
+      "0.10": {
+        "within_bound": true,
+        "f_actual": 0,
+        "f_tol": 2,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "raft_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "0.20": {
+        "within_bound": true,
+        "f_actual": 1,
+        "f_tol": 2,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_safety": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        },
+        "raft_accuracy": {
+          "mean": 0.857,
+          "std": 0.0,
+          "min": 0.857,
+          "max": 0.857
+        }
+      },
+      "0.33": {
+        "within_bound": true,
+        "f_actual": 2,
+        "f_tol": 2,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_safety": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        }
+      },
+      "0.40": {
+        "within_bound": true,
+        "f_actual": 2,
+        "f_tol": 2,
+        "pbft_safety": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "pbft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_safety": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        },
+        "raft_accuracy": {
+          "mean": 0.714,
+          "std": 0.0,
+          "min": 0.714,
+          "max": 0.714
+        }
+      },
+      "0.50": {
+        "within_bound": false,
+        "f_actual": 3,
+        "f_tol": 2,
+        "pbft_safety": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        },
+        "pbft_accuracy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "raft_safety": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        },
+        "raft_accuracy": {
+          "mean": 0.571,
+          "std": 0.0,
+          "min": 0.571,
+          "max": 0.571
+        }
+      }
+    },
+    "significance": {
+      "pbft_vs_raft_safety_n7_f0.33_equivocate": {
+        "mean_a": 1.0,
+        "mean_b": 0.714,
+        "mean_diff": 0.28600000000000003,
+        "n": 5,
+        "t_p": 0.0,
+        "cohens_dz": Infinity,
+        "wilcoxon_p": null,
+        "note": "zero within-pair variance (deterministic separation)"
+      }
+    }
+  },
+  "ablation": {
+    "full": {
+      "macro_f1": {
+        "mean": 0.9650061953922459,
+        "std": 0.014706958102754365,
+        "min": 0.9421536930098042,
+        "max": 0.9797225331536623,
+        "ci95": {
+          "mean": 0.9650061953922459,
+          "lo": 0.9445896644738752,
+          "hi": 0.9854227263106166,
+          "std": 0.016442879030000048,
+          "n": 5
+        }
+      },
+      "safety": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "accuracy": {
+        "mean": 0.714,
+        "std": 0.0,
+        "min": 0.714,
+        "max": 0.714
+      }
+    },
+    "no_consensus": {
+      "macro_f1": {
+        "mean": 0.8417037094515096,
+        "std": 0.03802486733930316,
+        "min": 0.7676387792579493,
+        "max": 0.872016016746766,
+        "ci95": {
+          "mean": 0.8417037094515096,
+          "lo": 0.7889167310515077,
+          "hi": 0.8944906878515115,
+          "std": 0.04251309410304672,
+          "n": 5
+        }
+      },
+      "safety": {
+        "mean": 0.714,
+        "std": 0.0,
+        "min": 0.714,
+        "max": 0.714
+      },
+      "accuracy": {
+        "mean": 0.714,
+        "std": 0.0,
+        "min": 0.714,
+        "max": 0.714
+      }
+    },
+    "no_classifier": {
+      "macro_f1": {
+        "mean": 0.9600429605880955,
+        "std": 0.013113610536464254,
+        "min": 0.9364073226544622,
+        "max": 0.9729131352267617,
+        "ci95": {
+          "mean": 0.9600429605880955,
+          "lo": 0.9418383506953772,
+          "hi": 0.9782475704808137,
+          "std": 0.014661462294995778,
+          "n": 5
+        }
+      },
+      "safety": null,
+      "accuracy": null
+    },
+    "significance": {
+      "full_vs_no_consensus_f1": {
+        "mean_a": 0.9650061953922459,
+        "mean_b": 0.8417037094515096,
+        "mean_diff": 0.12330248594073608,
+        "n": 5,
+        "t_stat": 8.387141834961932,
+        "t_p": 0.001105650094177546,
+        "cohens_dz": 3.7508438559814405,
+        "wilcoxon_p": 0.0625
+      },
+      "learned_vs_threshold_f1": {
+        "mean_a": 0.9650061953922459,
+        "mean_b": 0.9600429605880955,
+        "mean_diff": 0.004963234804150352,
+        "n": 5,
+        "t_stat": 2.198481002438969,
+        "t_p": 0.0928097238792842,
+        "cohens_dz": 0.9831905937390832,
+        "wilcoxon_p": 0.125
+      }
+    }
+  },
+  "total_runtime_s": 518.4,
+  "total_runtime_min": 8.64
+}

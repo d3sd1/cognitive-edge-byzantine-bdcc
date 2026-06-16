@@ -1,0 +1,17 @@
+{
+  "full": {
+    "macro_f1": 0.9531628745954708,
+    "safety": 1.0,
+    "accuracy": 0.714
+  },
+  "no_consensus": {
+    "macro_f1": 0.8631711034794365,
+    "safety": 0.714,
+    "accuracy": 0.714
+  },
+  "no_classifier": {
+    "macro_f1": 0.9558866953060385,
+    "safety": null,
+    "accuracy": null
+  }
+}
